@@ -1,0 +1,38 @@
+video {
+    object-fit: initial;
+}
+tr:hover {background-color: #f5f5f5}
+table {
+    border-collapse: collapse;
+    width: 20%;
+    display: inline;
+margin-left: 555px;
+
+}
+
+th{padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 37px;
+}
+td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 34px;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
