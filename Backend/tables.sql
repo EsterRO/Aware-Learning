@@ -1,0 +1,47 @@
+create database learning_from_distance
+--מה לעשות עם פרטים  למשתמשים ספציפיים לדוג כתובת מייל 
+
+
+
+create table Users(
+Id nvarchar(9) primary key,
+FirstName nvarchar(30),
+LastName nvarchar(30),
+Adress nvarchar(30),
+Specialization int not null constraint fK_Users_Specializations foreign key(Specialization)references Specializations,
+Rol_ int not null constraint fK_Users_Roles foreign key(Rol_)references Roles,
+)
+
+create table Roles(
+RoleNum int not null identity primary key,
+RoleName nvarchar(30)
+)
+create table  Specializations(
+SpecializationNum int not null identity primary key,
+SpecializationName nvarchar(30)
+)
+
+
+--מפתח זר של userid   אנחנו רוצות לאפשר רק ת"ז מורה איך?
+create table Subjects(
+SubjectNum int not null identity primary key,
+SpecializationNum int not null constraint fK_subject_Specializations foreign key(SpecializationNum)references Specializations,
+SubjectName nvarchar(30),
+UserId nvarchar(9) not null constraint fK_Subject_users foreign key(UserId)references Users,
+)
+
+--1.	ת"ז תלמידה
+--2.	תאריך מפתח ראשי עם ת"ז
+--3.	משעה מתעדכן אוטומטי
+--4.	עד שעה מתעדכן אוטומטי
+--5.	מספר חדר
+ create table Times(
+ UserId nvarchar(9) not null constraint fK_Times_users foreign key(UserId)references Users,
+ FromTime datetime,
+  ToTime datetime,
+ ClassNum int 
+ constraint pk primary key (UserId,FromTime)
+ )
+ use [learning_from_distance]
+ insert into Roles values('teacher')
+ insert into Roles values('student')
