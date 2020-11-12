@@ -1,0 +1,4 @@
+const Specializations = {
+    SpecializationNum,
+    SpecializationName
+}

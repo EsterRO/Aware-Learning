@@ -1,0 +1,4 @@
+const Role = {
+    RoleNum,
+    RoleName
+}
