@@ -15,16 +15,16 @@
    <div>
   <form  method="POST" style="width: 200px;display: block;margin-left: 555px;">
         <fieldset>
-        <input class="form-control" type="text" maxlength="20" placeholder="הזן שם משתמש" formControlName="UserName">
+        <input class="form-control" type="text" maxlength="20" placeholder="הזן שם משתמש" formControlName="UserName"#UserName>
     <div class="error" *ngIf="formLogin.controls['UserName'].errors?.required!=null">שדה זה נדרש</div>
     </fieldset>
         <br>
         <fieldset>
-        <input  class="form-control"type="text" maxlength="9" placeholder="הזן מספר זהות"formControlName="Id">
+        <input  class="form-control"type="text" maxlength="9" placeholder="הזן מספר זהות"formControlName="Id"#Id>
         <div class="error" *ngIf="formLogin.controls['Id'].errors?.required!=null">שדה זה נדרש</div>
     </fieldset><br>
     <fieldset>
-        <input type="button" value="כניסה" class="btn btn-primary"(click)="enter()">
+        <input type="button" value="כניסה" class="btn btn-primary"(click)="enter(UserName,Id)">
     </fieldset>
     </form>
 </div>

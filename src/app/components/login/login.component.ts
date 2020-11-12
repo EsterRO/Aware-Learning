@@ -22,7 +22,12 @@ export class LoginComponent implements OnInit {
       Id: new FormControl('', Validators.required)
     });
   }
-  enter() {
-    this.router.navigate(['/teacher']);
+  enter(UN,Id) {
+    // if(role==111)
+    // this.router.navigate(['/student']);
+    // if(role==222)
+    // this.router.navigate(['/student']);
+    // if(rolee==333)
+    // this.router.navigate(['/student']);
   }
 }
