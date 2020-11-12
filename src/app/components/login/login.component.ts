@@ -23,6 +23,8 @@ export class LoginComponent implements OnInit {
     });
   }
   enter() {
-    this.router.navigate(['/teacher']);
+
+    this.router.navigate(['/teacher, {Id}']);
+    
   }
 }

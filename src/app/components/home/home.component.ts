@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  /*  arr: ["C:\Users\User\Desktop\קליפים\new\זאנוויל דרשו","C:\Users\User\Desktop\קליפים\new\סקולען מלכות"]  */
   constructor(private router: Router) { }
 
   ngOnInit(): void {
