@@ -18,7 +18,7 @@ export class UsersService {
   constructor(private http: HttpClient) {
     this.login='' 
   }
-  createNewCall(call:):Observable<string>{
+  createNewCall(call:string):Observable<string>{
     return this.http.post<string>(`${this.url}/api/createNewCall`, call, this.options)
   }
 }

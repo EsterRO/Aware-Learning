@@ -9,25 +9,44 @@
 </head>
 
 <body>
-  
-  <h1 style="text-align: center;font-size: larger;">Login</h1>
-  <br>
-   <div>
-  <form  method="POST" style="width: 200px;display: block;margin-left: 555px;">
-        <fieldset>
-        <input class="form-control" type="text" maxlength="20" placeholder="הזן שם משתמש" formControlName="UserName">
-    <div class="error" *ngIf="formLogin.controls['UserName'].errors?.required!=null">שדה זה נדרש</div>
-    </fieldset>
-        <br>
-        <fieldset>
-        <input  class="form-control"type="text" maxlength="9" placeholder="הזן מספר זהות"formControlName="Id">
-        <div class="error" *ngIf="formLogin.controls['Id'].errors?.required!=null">שדה זה נדרש</div>
-    </fieldset><br>
-    <fieldset>
-        <input type="button" value="כניסה" class="btn btn-primary"(click)="enter()">
-    </fieldset>
-    </form>
-</div>
+
+    <h1 style="text-align: center;font-size: larger;">Login</h1>
+    <br>
+    <div>
+        <form method="POST" style="width: 200px;display: block;margin-left: 555px;">
+            <fieldset>
+                <input class="form-control" type="text" maxlength="9" placeholder="הזן מספר זהות" formControlName="Id">
+                <div class="error" *ngIf="formLogin.controls['Id'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset><br>
+            <fieldset>
+                <input class="form-control" type="text" maxlength="20" placeholder="הזן שם פרטי "
+                    formControlName="FUserName">
+                <div class="error" *ngIf="formLogin.controls['FUserName'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <fieldset>
+            <input class="form-control" type="text" maxlength="20" placeholder="הזן שם משפחה"
+                formControlName="LUserName">
+            <div class="error" *ngIf="formLogin.controls['LUserName'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <fieldset>
+            <input class="form-control" type="text" maxlength="20" placeholder="הזן כתובת "
+                formControlName="UserAdress">
+            <div class="error" *ngIf="formLogin.controls['UserAdress'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <fieldset>
+                <input class="form-control" type="text" maxlength="9" placeholder="הזן מס התמחות" formControlName="Specialization">
+                <div class="error" *ngIf="formLogin.controls['UserSpecialization'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset><br>
+            <fieldset>
+                <input class="form-control" type="text" maxlength="1" placeholder="הזן מספר תפקיד" formControlName="UserRole">
+                <div class="error" *ngIf="formLogin.controls['UserRole'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset><br> 
+            <fieldset>
+                <input type="button" value="כניסה" class="btn btn-primary" (click)="enter()">
+            </fieldset>
+        </form>
+    </div>
 </body>
 
 </html>
