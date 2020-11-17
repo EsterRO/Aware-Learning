@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "v1",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "msnodesqlv8": "^2.0.6",

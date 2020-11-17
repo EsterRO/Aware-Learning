@@ -14,11 +14,16 @@ export class UsersService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
    
-  url="http://localhost:5000"
+  url="http://localhost:4200"
   constructor(private http: HttpClient) {
     this.login='' 
   }
-  createNewCall(call:string):Observable<string>{
-    return this.http.post<string>(`${this.url}/api/createNewCall`, call, this.options)
+  Login(Id:string):Observable<boolean>{
+    let data={'Id':Id}
+    return this.http.get<boolean>(`${this.url}/api/Login`, {params:data})
+  }
+  SelectRoleById(Id:string):Observable<number>{
+    let data={'Id':Id}
+    return this.http.get<number>(`${this.url}/api/Login`,{params:data})
   }
 }

@@ -6,7 +6,7 @@ const { successResponse } = require("../common/service.js")
     
     function CreateNewCall(request,response)
     {
-        tableName="[dbo].[Roles]"
+        tableName="Roles"
         console.log('gggg')
       //  const query = `INSERT INTO ${tableName} VALUES('${request.body.requestDetails}','${request.body.password}',0)`
 

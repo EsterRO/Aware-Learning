@@ -1,4 +1,0 @@
-const Specializations = {
-    SpecializationNum,
-    SpecializationName
-}
