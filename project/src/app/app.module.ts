@@ -11,6 +11,7 @@ import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import{HttpClient}from '@angular/common/http'
 import { HttpClientModule } from '@angular/common/http';
+import { EnterNewUserComponent } from './components/moreComponents/enter-new-user/enter-new-user.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ManagerComponent,
     SecretaryComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    EnterNewUserComponent
   ],
   imports: [
     BrowserModule,

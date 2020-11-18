@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
 import { catchError, retry } from 'rxjs/operators';
+import { FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -25,5 +26,8 @@ export class UsersService {
   SelectRoleById(Id:string):Observable<number>{
     let data={'Id':Id}
     return this.http.get<number>(`${this.url}/api/Login`,{params:data})
+  }
+  CreateNewUser(user:User):Observable<boolean>{
+    return this.http.post<boolean>(`${this.url}/api/user`,user,this.options)
   }
 }

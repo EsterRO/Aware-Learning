@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-secretary',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecretaryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private Userservise: UsersService) { }
 
   ngOnInit(): void {
   }
-
+  enterUsers(){
+    this.router.navigate
+  }
 }
