@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../models/User';
 import { catchError, retry } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
+import { Times } from '../models/Times';
 
 
 @Injectable({
@@ -29,5 +30,8 @@ export class UsersService {
   }
   CreateNewUser(user:User):Observable<boolean>{
     return this.http.post<boolean>(`${this.url}/api/user`,user,this.options)
+  }
+  UpdateEnterTimeUser(newTimeE:Times):Observable<Date>{
+    return this.http.post<Date>(`${this.url}/api/Login`,newTimeE,this.options)
   }
 }

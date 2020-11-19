@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Times } from 'src/app/models/Times';
 import { User } from 'src/app/models/User';
 import { UsersService } from 'src/app/service/users.service';
 
@@ -34,6 +35,12 @@ export class LoginComponent implements OnInit {
     this.Userservise.Login(this.formLogin.controls['Id'].value).subscribe((data) => {
       console.log(data)
       if (data) {
+        let newTime=new Times()
+        newTime.userId=this.formLogin.controls['Id'].value
+        newTime.fromTime=new Date()
+        this.Userservise.UpdateEnterTimeUser(newTime).subscribe((data)=>{
+          console.log(data)
+        })
         this.Userservise.login = this.formLogin.controls.Id.value
         console.log('login: ' + this.Userservise.login)
         this.Userservise.SelectRoleById(this.formLogin.controls['Id'].value).subscribe((numRole)=>{

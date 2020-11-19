@@ -14,6 +14,6 @@ export class SecretaryComponent implements OnInit {
   ngOnInit(): void {
   }
   enterUsers(){
-    this.router.navigate
+    this.router.navigate['/moreComponents/enter-new-user']
   }
 }

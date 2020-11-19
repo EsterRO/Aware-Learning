@@ -8,6 +8,8 @@ import { ManagerComponent } from './components/manager/manager.component';
 import { SecretaryComponent } from './components/secretary/secretary.component';
 import { StudentComponent } from './components/student/student.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { Times } from './models/Times';
+import{EnterNewUserComponent} from './components/moreComponents/enter-new-user/enter-new-user.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,7 @@ const routes: Routes = [
  {path:'student',component:StudentComponent} ,
  {path:'manager',component:ManagerComponent} ,
  {path:'secretary',component:SecretaryComponent} ,
+ {path:'moreComponents/enter-new-user',component:EnterNewUserComponent},
  {path:'',redirectTo:'/home',pathMatch:'full'} 
 ];
 
