@@ -16,4 +16,7 @@ export class SecretaryComponent implements OnInit {
   enterUsers(){
     this.router.navigate['/moreComponents/enter-new-user']
   }
+  PlaceStudents(){
+    this.router.navigate['/moreComponents/PlaceStudents']
+  }
 }

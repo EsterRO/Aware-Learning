@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="placeForm" (submit)="send()">
+    <!-- <fieldset>
+        <input type="text" maxlength="9"  placeholder="הזן מספר זהות משתמש" class="form-control" formControlName="IdUser">
+        <div class="error" *ngIf="placeForm.controls['IdUser'].errors?.required!=null">שדה זה נדרש</div>
+    </fieldset> -->
+    <fieldset>
+        <input type="number" maxlength="3"  placeholder="הזן מספר חדר" class="form-control" formControlName="NumRoomUser">
+        <div class="error" *ngIf="placeForm.controls['NumRoomUser'].errors?.required!=null">שדה זה נדרש</div>
+    </fieldset>
+    <fieldset>
+        <input type="date" maxlength="9"  placeholder="הזן משעה:" class="form-control" formControlName="FromTime">
+        <div class="error" *ngIf="placeForm.controls['FromTime'].errors?.required!=null">שדה זה נדרש</div>
+    </fieldset>
+    <fieldset>
+        <input type="date" maxlength="9"  placeholder="הזן עד שעה" class="form-control" formControlName="ToTime">
+        <div class="error" *ngIf="placeForm.controls['ToTime'].errors?.required!=null">שדה זה נדרש</div>
+    </fieldset>
+    </form>
+</body>
+</html>

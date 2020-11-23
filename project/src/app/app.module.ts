@@ -12,6 +12,7 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import{HttpClient}from '@angular/common/http'
 import { HttpClientModule } from '@angular/common/http';
 import { EnterNewUserComponent } from './components/moreComponents/enter-new-user/enter-new-user.component';
+import { PlacesComponent } from './components/moreComponents/places/places.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EnterNewUserComponent } from './components/moreComponents/enter-new-use
     SecretaryComponent,
     StudentComponent,
     TeacherComponent,
-    EnterNewUserComponent
+    EnterNewUserComponent,
+    PlacesComponent
   ],
   imports: [
     BrowserModule,
