@@ -1,12 +1,14 @@
 {
-  "name": "Backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "v1",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "msnodesqlv8": "^2.0.6",
-    "mssql": "^6.2.3"
+    "mssql": "^6.2.3",
+    "package.json": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {

@@ -3,10 +3,15 @@ const commonService= require("../common/service")
 const sql = require('mssql')
 
 var config = {
-    user: 'sa',
-    password: '123456',
+    user: 'esty',
+    password: '1234',
     server: 'localhost', 
-    database: 'learning_from_distance' 
+    database: 'learning_from_distance' ,
+    "options": {
+        "encrypt": true,
+        "enableArithAbort": true,
+        "tedious":true
+        }
 };
 /* values, */
 function executeAsync(query,  values, res) {

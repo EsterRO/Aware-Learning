@@ -21,7 +21,7 @@ function SelectRoleById(request, response) {
 }
 function UpdateEnterTimeUser(request,response){
     const query=`INSERT INTO ${tableNameT} VALUES ('${request.userId}',${request.FromTime})`
-    await.dal.executeAsync(query,request.body,response).then((data)=>{
+    dal.executeAsync(query,request.body,response).then((data)=>{
       console.log ('was updated enter time: '+JSON.stringify(data))
        response.send('was updated enter time')
     },(err)=>console.log('err from Login.UpdateEnterTimeUser: '+(data)).catch((err)=>console.log('err from cath: '+err)))

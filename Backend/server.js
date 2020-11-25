@@ -1,61 +1,24 @@
-let express = require('express')
-let path = require('path')
+const express = require('express')
+const app = express()
+const path = require('path')
 const bd = require('body-parser')
 const cors = require('cors')
-
-let app = express()
-const Role_route = require("./routes/Role.route")
-
+const login_route=require('./routes/Login.route')
+const user_route=require('./routes/User.route')
 
 
+
+app.use(cors())
 app.use(bd.json())
 app.use(bd.urlencoded())
-Role_route.route(app)
-
-// app.get('/', function (req, res) {
-
-//     var sql = require("mssql");
-
-//     // config for your database
-
-//     var config = {
-//         user: 'DESKTOP-DTGJORI\LEA-HOME',
-//         // password: 'mypassword',
-//         server: 'localhost',
-//         database: 'learning_from_distance'
-//     };
 
 
+login_route.route(app)
+user_route.route(app)
 
-//     // connect to your database
-//     sql.connect(config, function (err) {
-//         // enableArithAbort= true
-//         if (err) console.log(err);
+//-------------------------------------------------------------------------------------------------------
 
-//         // create Request object
-//         var request = new sql.Request();
-
-//         // query to the database and get the records
-//         request.query('select * from Roles', function (err, recordset) {
-
-//             if (err) console.log(err)
-
-//             // send records as a response
-//             res.send(recordset);
-
-//         });
-//     });
-// });
-
-// function MySqlError(err, res) {
-//     res.status(500).json({
-//         STATUS: 'FAILURE',
-//         MESSAGE: 'DataBase error',
-//         DATA: err
-//     })
-// }
-
-app.get('/', function (req, res) {
+/* app.get('/', function (req, res) {
 
    var sql = require("mssql");
 
@@ -85,12 +48,12 @@ app.get('/', function (req, res) {
 
       });
    });
-});
+}); */
+
+
+//----------------------------------------------------------------------------
 
 
 
 
-
-
-
-app.listen(process.env.PORT || 4200, () => { console.log("server is listening on port 4200") })
+app.listen(process.env.PORT || 3000, () => { console.log("server is listening on port 3000") })

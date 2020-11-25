@@ -17,7 +17,7 @@ export class UsersService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  url = "http://localhost:4200"
+  url = "http://localhost:3000"
   constructor(private http: HttpClient) {
     this.login = ''
   }
@@ -35,12 +35,12 @@ export class UsersService {
   UpdateEnterTimeUser(newTimeE: Times): Observable<Date> {
     return this.http.post<Date>(`${this.url}/api/Login`, newTimeE, this.options)
   }
-  PlaceUser( numRoom: number, FTime: Date, TTime: Date): Observable<Array<object>> {
+/*   PlaceUser(numRoom: number, FTime: Date, TTime: Date): Observable <Array<Object>> {
     let data = {
       'nRStudent': numRoom,
       'FTime': FTime,
       'TTime': TTime
     }
-    return this.http.get<Array<object>>(`${this.url}/api/user`,{params:{nRStudent:numRoom}})
-  }
+    return this.http.get<Array<Object>>(`${this.url}/api/user`,{params:data})
+  } */
 }

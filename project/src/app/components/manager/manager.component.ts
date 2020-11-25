@@ -12,6 +12,6 @@ export class ManagerComponent implements OnInit {
   ngOnInit(): void {
   }
   makav(){
-    console.log("9")
+    console.log("fffffffffff")
   }
 }
