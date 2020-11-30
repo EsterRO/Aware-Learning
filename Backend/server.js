@@ -5,14 +5,14 @@ const bd = require('body-parser')
 const cors = require('cors')
 const login_route=require('./routes/Login.route')
 const user_route=require('./routes/User.route')
-
+const student_route=require('./routes/student.route')
 
 
 app.use(cors())
 app.use(bd.json())
 app.use(bd.urlencoded())
 
-
+student_route.route(app)
 login_route.route(app)
 user_route.route(app)
 

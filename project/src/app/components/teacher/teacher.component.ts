@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-teacher',
@@ -7,14 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private router: Router, private Userservise: UsersService) { }
 
   ngOnInit(): void {
   }
-  Send_matirial(){}
-  Send_masage(){}
-  Send_tests(){}
-  Tracking_students(){}
-  Fill_Tracking_students(){}
+  Send_matirial() { }
+  Send_masage() { }
+  Send_tests() { }
+  Fill_Tracking_students() { }
+  Tracking_students() {
+    this.Userservise.TrackingStudents().subscribe((data) => {
+      console.log('Tracking students: ' + data)
+    })
+
+  }
+
+
 
 }

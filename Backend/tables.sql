@@ -1,6 +1,5 @@
 create database learning_from_distance
---од мтщеъ тн фшийн  мощъощйн сфцйфййн мгев лъебъ оййм 
-
+--пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 
 create table Users(
@@ -22,7 +21,7 @@ SpecializationName nvarchar(30)
 )
 
 
---офъз жш щм userid   арзре шецеъ мафщш шч ъ"ж оешд айк?
+--пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ userid   пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ"пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ?
 create table Subjects(
 SubjectNum int not null identity primary key,
 SpecializationNum int not null constraint fK_subject_Specializations foreign key(SpecializationNum)references Specializations,
@@ -30,11 +29,11 @@ SubjectName nvarchar(30),
 UserId nvarchar(9) not null constraint fK_Subject_users foreign key(UserId)references Users,
 )
 
---1.	ъ"ж ъмойгд
---2.	ъашйк офъз шащй тн ъ"ж
---3.	ощтд оътглп аеиеоий
---4.	тг щтд оътглп аеиеоий
---5.	осфш згш
+--1.	пїЅ"пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+--2.	пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ"пїЅ
+--3.	пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+--4.	пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+--5.	пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
  create table Times(
  UserId nvarchar(9) not null constraint fK_Times_users foreign key(UserId)references Users,
  FromTime datetime,

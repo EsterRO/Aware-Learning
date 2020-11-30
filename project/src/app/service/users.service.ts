@@ -23,17 +23,21 @@ export class UsersService {
   }
   Login(Id: string): Observable<boolean> {
     let data = { 'Id': Id }
-    return this.http.get<boolean>(`${this.url}/api/Login`, { params: data })
+    return this.http.get<boolean>(`${this.url}/api/login`, { params: data })
   }
   SelectRoleById(Id: string): Observable<number> {
     let data = { 'Id': Id }
-    return this.http.get<number>(`${this.url}/api/Login`, { params: data })
+    return this.http.get<number>(`${this.url}/api/login`, { params: data })
   }
   CreateNewUser(user: User): Observable<boolean> {
+    console.log('new user')
     return this.http.post<boolean>(`${this.url}/api/user`, user, this.options)
   }
   UpdateEnterTimeUser(newTimeE: Times): Observable<Date> {
-    return this.http.post<Date>(`${this.url}/api/Login`, newTimeE, this.options)
+    return this.http.post<Date>(`${this.url}/api/login`, newTimeE, this.options)
+  }
+  TrackingStudents():Observable<User[]>{
+    return this.http.get<User[]>(`${this.url}/api/Student`)
   }
 /*   PlaceUser(numRoom: number, FTime: Date, TTime: Date): Observable <Array<Object>> {
     let data = {

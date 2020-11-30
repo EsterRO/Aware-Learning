@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-manager',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private Userservise: UsersService) { }
 
   ngOnInit(): void {
   }
-  makav(){
-    console.log("fffffffffff")
+  TrackingStudents() {
+    this.Userservise.TrackingStudents().subscribe((data) => {
+      console.log('Tracking students: ' + data)
+    })
   }
 }

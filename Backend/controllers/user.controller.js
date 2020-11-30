@@ -3,6 +3,7 @@ const dal = require("../dal/dal.js")
 tableName = "Users"
 tableNameT="Times"
 function CreateNewUser(request, response){
+    console.log('api')
     const user=request.body
     const query=`INSERT INTO ${tableName} VALUES ('${request.Id}','${request.FirstName}','${request.LastName}','${request.Adress}',${request.Specialization},${request.Rol_}) `
      dal.executeAsync(query,request.body,response).then((data)=>{
