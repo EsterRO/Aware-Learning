@@ -20,4 +20,10 @@ export class SecretaryComponent implements OnInit {
   PlaceStudents(){
     this.router.navigate(['../moreComponents/PlaceStudents'])
   }
+  enterSpecialization(){
+    this.router.navigate(['../moreComponents/enter-specialization'])
+  }
+  enterSubjectsToSpecialization(){
+    this.router.navigate(['../moreComponents/enter-subjects'])
+  }
 }

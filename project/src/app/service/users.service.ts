@@ -47,4 +47,7 @@ export class UsersService {
     }
     return this.http.get<Array<Object>>(`${this.url}/api/user`,{params:data})
   } */
+  Specialization(SpecName:string):Observable<boolean>{
+    return this.http.post<boolean>(`${this.url}/api/specialization`,SpecName,this.options)
+  }
 }

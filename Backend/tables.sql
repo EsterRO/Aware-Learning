@@ -28,7 +28,11 @@ SpecializationNum int not null constraint fK_subject_Specializations foreign key
 SubjectName nvarchar(30),
 UserId nvarchar(9) not null constraint fK_Subject_users foreign key(UserId)references Users,
 )
-
+create  table Schedule(
+ScheduleDate date primary key,
+SpecializationNum int not null constraint fK_schedule_Specializations foreign key(SpecializationNum)references Specializations,
+SubjectNum int not null constraint fK_schedule_Subject foreign key(SubjectNum) references Subjects
+)
 --1.	�"� ������
 --2.	����� ���� ���� �� �"�
 --3.	���� ������ �������

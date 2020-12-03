@@ -13,6 +13,8 @@ import{HttpClient}from '@angular/common/http'
 import { HttpClientModule } from '@angular/common/http';
 import { EnterNewUserComponent } from './components/moreComponents/enter-new-user/enter-new-user.component';
 import { PlacesComponent } from './components/moreComponents/places/places.component';
+import { EnterSpecializationComponent } from './components/moreComponents/enter-specialization/enter-specialization.component';
+import { EnterSubjectsComponent } from './components/moreComponents/enter-subjects/enter-subjects.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PlacesComponent } from './components/moreComponents/places/places.compo
     StudentComponent,
     TeacherComponent,
     EnterNewUserComponent,
-    PlacesComponent
+    PlacesComponent,
+    EnterSpecializationComponent,
+    EnterSubjectsComponent
   ],
   imports: [
     BrowserModule,

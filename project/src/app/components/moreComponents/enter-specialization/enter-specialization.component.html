@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;font-size: larger;">Enter New Specialization</h1>
+    <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newSpecialization" (submit)="send()">
+        <fieldset>
+            <input type="text" maxlength="30"placeholder="הכנס שם התמחות" class="form-control" formControlName="specializationName">
+            <div class="error" *ngIf="newSpecialization.controls['specializationName'].errors?.required!=null">שדה זה נדרש</div>
+        </fieldset>
+        <input type="submit" class="button">
+    </form>
+</body>
+</html>
