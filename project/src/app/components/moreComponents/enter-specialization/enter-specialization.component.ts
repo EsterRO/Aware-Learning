@@ -22,7 +22,7 @@ export class EnterSpecializationComponent implements OnInit {
     this.newSpecialization.controls['specializationName'].updateValueAndValidity()
     if(this.newSpecialization.valid)
     {
-      this.Userservise.enterSpecialization(this.newSpecialization.controls['specializationName'].value).subscibe((data)=>{
+      this.Userservise.enterSpecialization(this.newSpecialization.controls['specializationName'].value).subscribe((data)=>{
         console.log("new Specialization: "+data)
       })
     }

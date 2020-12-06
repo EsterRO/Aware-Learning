@@ -6,6 +6,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
 import { Times } from '../models/Times';
 import { Time } from '@angular/common';
+import { Subjects } from '../models/Subject';
 
 
 @Injectable({
@@ -36,18 +37,21 @@ export class UsersService {
   UpdateEnterTimeUser(newTimeE: Times): Observable<Date> {
     return this.http.post<Date>(`${this.url}/api/login`, newTimeE, this.options)
   }
-  TrackingStudents():Observable<User[]>{
+  TrackingStudents(): Observable<User[]> {
     return this.http.get<User[]>(`${this.url}/api/Student`)
   }
-/*   PlaceUser(numRoom: number, FTime: Date, TTime: Date): Observable <Array<Object>> {
-    let data = {
-      'nRStudent': numRoom,
-      'FTime': FTime,
-      'TTime': TTime
-    }
-    return this.http.get<Array<Object>>(`${this.url}/api/user`,{params:data})
-  } */
-  Specialization(SpecName:string):Observable<boolean>{
-    return this.http.post<boolean>(`${this.url}/api/specialization`,SpecName,this.options)
+  /*   PlaceUser(numRoom: number, FTime: Date, TTime: Date): Observable <Array<Object>> {
+      let data = {
+        'nRStudent': numRoom,
+        'FTime': FTime,
+        'TTime': TTime
+      }
+      return this.http.get<Array<Object>>(`${this.url}/api/user`,{params:data})
+    } */
+  enterSpecialization(SpecName: string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}/api/specialization`, SpecName, this.options)
+  }
+  enterSubject(newSub: Subjects): Observable<boolean> {
+    return this.http.post<boolean>(`${this.url}/api/subject`, newSub, this.options)
   }
 }
