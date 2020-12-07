@@ -15,6 +15,7 @@ import { EnterNewUserComponent } from './components/moreComponents/enter-new-use
 import { PlacesComponent } from './components/moreComponents/places/places.component';
 import { EnterSpecializationComponent } from './components/moreComponents/enter-specialization/enter-specialization.component';
 import { EnterSubjectsComponent } from './components/moreComponents/enter-subjects/enter-subjects.component';
+import { UpdateScheduleComponent } from './components/moreComponents/update-schedule/update-schedule.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EnterSubjectsComponent } from './components/moreComponents/enter-subjec
     EnterNewUserComponent,
     PlacesComponent,
     EnterSpecializationComponent,
-    EnterSubjectsComponent
+    EnterSubjectsComponent,
+    UpdateScheduleComponent
   ],
   imports: [
     BrowserModule,

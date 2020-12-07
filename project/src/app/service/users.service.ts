@@ -7,6 +7,7 @@ import { FormGroup } from '@angular/forms';
 import { Times } from '../models/Times';
 import { Time } from '@angular/common';
 import { Subjects } from '../models/Subject';
+import { Schedule } from '../models/Schedule';
 
 
 @Injectable({
@@ -53,5 +54,9 @@ export class UsersService {
   }
   enterSubject(newSub: Subjects): Observable<boolean> {
     return this.http.post<boolean>(`${this.url}/api/subject`, newSub, this.options)
+  }
+  CreateNewSchedule(newSchedule:Schedule):Observable<boolean>{
+    return this.http.post<boolean>(`${this.url}/api/schedule`,newSchedule,this.options)
+
   }
 }

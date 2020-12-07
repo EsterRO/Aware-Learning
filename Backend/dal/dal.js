@@ -3,8 +3,8 @@ const commonService= require("../common/service")
 const sql = require('mssql')
 
 var config = {
-    user: 'MYMY\User',
-    /* password: , */
+    user: `MYMY\User`,
+     //password:123456789,
     server: 'MYMY', 
     database: 'learning_from_distance' ,
     "options": {

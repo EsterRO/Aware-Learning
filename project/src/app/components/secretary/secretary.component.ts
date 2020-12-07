@@ -26,4 +26,7 @@ export class SecretaryComponent implements OnInit {
   enterSubjectsToSpecialization(){
     this.router.navigate(['../moreComponents/enter-subjects'])
   }
+  updateSchedule(){
+    this.router.navigate(['../moreComponents/update-schedule'])
+  }
 }
