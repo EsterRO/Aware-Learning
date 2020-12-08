@@ -41,10 +41,16 @@ SubjectNum int not null constraint fK_schedule_Subject foreign key(SubjectNum) r
  create table Times(
  UserId nvarchar(9) not null constraint fK_Times_users foreign key(UserId)references Users,
  FromTime datetime,
-  ToTime datetime,
+ToTime datetime,
  ClassNum int 
  constraint pk primary key (UserId,FromTime)
  )
+ CREATE TABLE LessonsSeen(
+NumList int identity primary key,
+StudentId nvarchar(9)not null constraint fK_LessonsSeen_StudentId foreign key(StudentId)references Users,
+NumSubject int not null constraint fk_LessonsSeen_NumSubject foreign key(NumSubject)references Subjects,
+ScheduleDate date not null constraint fk_LessonsSeen_ScheduleDate foreign key(ScheduleDate)references Schedule
+)
  use [learning_from_distance]
  insert into Roles values('teacher')
  insert into Roles values('student')
