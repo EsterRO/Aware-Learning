@@ -9,21 +9,23 @@ import { UsersService } from 'src/app/service/users.service';
   styleUrls: ['./update-schedule.component.css']
 })
 export class UpdateScheduleComponent implements OnInit {
-
+date;
+numSpe;
+numSub;
   constructor(private router: Router, private Userservise: UsersService) { }
 
   ngOnInit(): void {
   }
   send() {
-    const date = document.getElementById("date").value;
-    const numSpe = document.getElementById("numSep").value
-    const numSub=document.getElementById("numSub").value
-    let newSchedule= new Schedule()
-    newSchedule.ScheduleDate=date;
-    newSchedule.SpecializationNum=numSpe;
-    newSchedule.SubjectNum=numSub;
-    this.Userservise.CreateNewSchedule(newSchedule).subscribe((data)=>{
-      console.log("enter new schedule: "+date)
+    let date: Date
+    let numSpe: number
+    let numSub: number
+    let newSchedule = new Schedule()
+    newSchedule.ScheduleDate = date;
+    newSchedule.SpecializationNum = numSpe;
+    newSchedule.SubjectNum = numSub;
+    this.Userservise.CreateNewSchedule(newSchedule).subscribe((data) => {
+      console.log("enter new schedule: " + date)
     })
   }
 }

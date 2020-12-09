@@ -14,9 +14,9 @@
             <th>מס' מקצוע</th>
         </tr>
         <tr>
-            <input type="date"value="01/01/2020" id="date">
-           <input type="number" maxlength="3" value="" id="numSep">
-           <input type="number" maxlength="3" value="מס' מקצוע" id="numSub">
+            <input type="date"value="01/01/2020" [(ngModel)]="date">
+           <input type="number" maxlength="3" value="" [(ngModel)]="numSpe">
+           <input type="number" maxlength="3" value="מס' מקצוע" [(ngModel)]="numSub">
             <td><input type="submit" (click)="send()"></td>
         </tr>
     </table>

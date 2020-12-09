@@ -17,7 +17,7 @@ export class TeacherComponent implements OnInit {
   Send_matirial() { }
   Send_masage() { }
   Send_tests() { }
-  Fill_Tracking_students() { }
+  Fill_Tracking_students() {}
   Tracking_students() {
     this.Userservise.TrackingStudents().subscribe((data) => {
       console.log('Tracking students: ' + data)
