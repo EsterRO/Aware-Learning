@@ -1,7 +1,7 @@
 const commonService = require("../common/service")
 
 const sql = require('mssql')
-//estyyyyyyyyyyyyyyyy
+
 var config = {
     user: `sa`,
     password: 'a1234',

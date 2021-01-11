@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-/../Backend/dal
+/../Backend/dal/dal.js
 
 # profiling files
 chrome-profiler-events*.json
