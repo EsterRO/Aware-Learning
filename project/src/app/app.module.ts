@@ -16,6 +16,7 @@ import { PlacesComponent } from './components/moreComponents/places/places.compo
 import { EnterSpecializationComponent } from './components/moreComponents/enter-specialization/enter-specialization.component';
 import { EnterSubjectsComponent } from './components/moreComponents/enter-subjects/enter-subjects.component';
 import { UpdateScheduleComponent } from './components/moreComponents/update-schedule/update-schedule.component';
+import { EnterFilesComponent } from './components/moreComponents/enter-files/enter-files.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UpdateScheduleComponent } from './components/moreComponents/update-sche
     PlacesComponent,
     EnterSpecializationComponent,
     EnterSubjectsComponent,
-    UpdateScheduleComponent
+    UpdateScheduleComponent,
+    EnterFilesComponent
   ],
   imports: [
     BrowserModule,

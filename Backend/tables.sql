@@ -51,6 +51,17 @@ StudentId nvarchar(9)not null constraint fK_LessonsSeen_StudentId foreign key(St
 NumSubject int not null constraint fk_LessonsSeen_NumSubject foreign key(NumSubject)references Subjects,
 ScheduleDate date not null constraint fk_LessonsSeen_ScheduleDate foreign key(ScheduleDate)references Schedule
 )
+create table Files
+(
+FileId int identity ,
+SubjectNum int  constraint fK_Files_SubjectNum foreign key(SubjectNum)references Subjects,
+FileCategory nvarchar(15),
+NameFile nvarchar(20),
+RoutingFile nvarchar(50),
+EndingFile nvarchar(10),
+UpdateDateFile date,
+constraint pkFile primary key (FileId,UpdateDateFile)
+)
  use [learning_from_distance]
  insert into Roles values('teacher')
  insert into Roles values('student')

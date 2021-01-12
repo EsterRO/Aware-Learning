@@ -16,8 +16,10 @@ export class PlacesComponent implements OnInit {
   placeForm: FormGroup
   ngOnInit(): void {
     this.studentsB = new Array<object>()
-    this.send()
     this.placeForm = new FormGroup({
+      NumRoomUser:new FormControl('', Validators.required),
+      FromTime:new FormControl('', Validators.required),
+      ToTime:new FormControl('', Validators.required),
       // IdUser: new FormControl('', Validators.required),
       /*  NumRoomUser: new FormGroup('', Validators.required),
        FromTime: new FormGroup('', Validators.required),

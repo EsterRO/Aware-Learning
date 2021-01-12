@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;font-size: larger;">Enter New User</h1>
+    <br>
+    <div>
+        <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newUserForm" (submit)="send()">
+            <fieldset>
+                <input type="text" maxlength="9" placeholder="הזן מספר זהות משתמש" class="form-control" formControlName="IdUser">
+                <div class="error" *ngIf="newUserForm.controls['IdUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <input type="text" maxlength="30" placeholder="הזן שם פרטי" class="form-control" formControlName="FNameUser">
+                <div class="error" *ngIf="newUserForm.controls['FNameUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <input type="text" maxlength="30" placeholder="הזן שם משפחה" class="form-control" formControlName="LNameUser">
+                <div class="error" *ngIf="newUserForm.controls['LNameUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <input type="text" maxlength="30" placeholder="הזן כתובת משתמש" class="form-control" formControlName="AdressUser">
+                <div class="error" *ngIf="newUserForm.controls['AdressUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <input type="number"  placeholder="הזן מספר התמחות"  class="form-control" formControlName="SpecializationUser">
+                <div class="error" *ngIf="newUserForm.controls['SpecializationUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset>
+                <input type="number"  placeholder="הזן מספר תפקיד" class="form-control" formControlName="RoleUser">
+                <div class="error" *ngIf="newUserForm.controls['RoleUser'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset>
+            <br>
+            <br>
+            <input type="submit" class="button">
+        </form>
+    </div>
+</body>
+</html>
