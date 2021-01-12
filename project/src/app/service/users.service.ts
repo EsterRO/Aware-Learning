@@ -8,6 +8,7 @@ import { Times } from '../models/Times';
 import { Time } from '@angular/common';
 import { Subjects } from '../models/Subject';
 import { Schedule } from '../models/Schedule';
+import { Files } from '../models/Files';
 
 
 @Injectable({
@@ -58,5 +59,8 @@ export class UsersService {
   CreateNewSchedule(newSchedule:Schedule):Observable<boolean>{
     return this.http.post<boolean>(`${this.url}/api/schedule`,newSchedule,this.options)
 
+  }
+  AddNewFile(newFile:Files):Observable<boolean>{
+    return this.http.post<boolean>(`${this.url}/api/file`,newFile,this.options)
   }
 }

@@ -29,4 +29,7 @@ export class SecretaryComponent implements OnInit {
   updateSchedule(){
     this.router.navigate(['../moreComponents/update-schedule'])
   }
+  NewFile(){
+    this.router.navigate(['../moreComponents/enter-files'])
+  }
 }

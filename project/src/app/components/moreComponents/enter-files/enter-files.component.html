@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1 style="text-align: center;font-size: larger;">Enter New User</h1>
+    <h1 style="text-align: center;font-size: larger;">Enter New File</h1>
     <br>
     <div>
-        <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newUserForm" (submit)="send()">
+        <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newFileForm" (submit)="send()">
             <fieldset>
-                <input type="text" maxlength="9" placeholder="הזן מספר זהות משתמש" class="form-control" formControlName="IdUser">
-                <div class="error" *ngIf="newUserForm.controls['IdUser'].errors?.required!=null">שדה זה נדרש</div>
+                <input type="namber" maxlength="3" placeholder="הזן מס מקצוע" class="form-control"
+                    formControlName="SubjectNum">
+                <div class="error" *ngIf="newFileForm.controls['SubjectNum'].errors?.required!=null">שדה זה נדרש</div>
             </fieldset>
             <br>
             <br>
             <fieldset>
-                <input type="text" maxlength="30" placeholder="הזן שם פרטי" class="form-control" formControlName="FNameUser">
-                <div class="error" *ngIf="newUserForm.controls['FNameUser'].errors?.required!=null">שדה זה נדרש</div>
+                <select name="FileCategory" form="newFileForm"  class="form-control" formControlName="FileCategory">
+                    <option value="1"selected>הסרטה</option>
+                    <option value="2">דף תירגול</option>
+                    <option value="3">מבחן</option>
+                </select>
+                <div class="error" *ngIf="newFileForm.controls['FileCategory'].errors?.required!=null">שדה זה נדרש</div>
             </fieldset>
             <br>
             <br>
             <fieldset>
-                <input type="text" maxlength="30" placeholder="הזן שם משפחה" class="form-control" formControlName="LNameUser">
-                <div class="error" *ngIf="newUserForm.controls['LNameUser'].errors?.required!=null">שדה זה נדרש</div>
+                <input type="text" maxlength="20" placeholder="הזן שם קובץ" class="form-control"
+                    formControlName="NameFile">
+                <div class="error" *ngIf="newFileForm.controls['NameFile'].errors?.required!=null">שדה זה נדרש</div>
             </fieldset>
             <br>
             <br>
             <fieldset>
-                <input type="text" maxlength="30" placeholder="הזן כתובת משתמש" class="form-control" formControlName="AdressUser">
-                <div class="error" *ngIf="newUserForm.controls['AdressUser'].errors?.required!=null">שדה זה נדרש</div>
+                <input type="text" maxlength="50" placeholder="הזן ניתוב הקובץ" class="form-control"
+                    formControlName="RoutingFile">
+                <div class="error" *ngIf="newFileForm.controls['RoutingFile'].errors?.required!=null">שדה זה נדרש</div>
             </fieldset>
             <br>
             <br>
             <fieldset>
-                <input type="number"  placeholder="הזן מספר התמחות"  class="form-control" formControlName="SpecializationUser">
-                <div class="error" *ngIf="newUserForm.controls['SpecializationUser'].errors?.required!=null">שדה זה נדרש</div>
+               <!--  כאן אמור להיות תגית <select name="" id=""></select> -->
+               <select name="EndingFile" form="newFileForm"  class="form-control" formControlName="EndingFile">
+                <option value=".mp4" selected>.mp4 -הסרטה</option>
+                <option value=".docx">.docx -קבצי וורד</option>
+                <option value=".pdf">.pdf -קבצי pdf</option>
+                <option value=".jpg">.jpg -תמונה</option>
+            </select>
+                <div class="error" *ngIf="newFileForm.controls['EndingFile'].errors?.required!=null">שדה זה נדרש</div>
             </fieldset>
             <br>
             <br>
-            <fieldset>
-                <input type="number"  placeholder="הזן מספר תפקיד" class="form-control" formControlName="RoleUser">
-                <div class="error" *ngIf="newUserForm.controls['RoleUser'].errors?.required!=null">שדה זה נדרש</div>
-            </fieldset>
-            <br>
-            <br>
+        
             <input type="submit" class="button">
         </form>
     </div>
 </body>
+
 </html>
