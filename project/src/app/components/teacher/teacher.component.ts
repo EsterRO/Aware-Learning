@@ -14,9 +14,7 @@ export class TeacherComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Send_matirial() { }
   Send_masage() { }
-  Send_tests() { }
   Fill_Tracking_students() {}
   Tracking_students() {
     this.Userservise.TrackingStudents().subscribe((data) => {
