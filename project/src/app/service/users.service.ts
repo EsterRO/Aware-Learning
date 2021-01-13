@@ -63,4 +63,10 @@ export class UsersService {
   AddNewFile(newFile:Files):Observable<boolean>{
     return this.http.post<boolean>(`${this.url}/api/file`,newFile,this.options)
   }
+  GetAllFiles():Observable<Files[]>{
+    return this.http.get<Files[]>(`${this.url}/api/file`)
+  }
+  GetAllSubjectsFromSchedule():Observable<string[]>{
+    return this.http.get<string[]>(`${this.url}/api/schedule`)
+  }
 }

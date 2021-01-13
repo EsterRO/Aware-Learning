@@ -6,7 +6,10 @@ const cors = require('cors')
 const login_route=require('./routes/Login.route')
 const user_route=require('./routes/User.route')
 const student_route=require('./routes/student.route')
-
+const file_route=require('./routes/file.route')
+const schedule_route=require('./routes/schedule.route')
+const specialization_route=require('./routes/specialization.route')
+const subject_route=require('./routes/subject.route')
 
 app.use(cors())
 app.use(bd.json())
@@ -15,7 +18,10 @@ app.use(bd.urlencoded())
 student_route.route(app)
 login_route.route(app)
 user_route.route(app)
-
+file_route.route(app)
+schedule_route.route(app)
+specialization_route.route(app)
+subject_route.route(app)
 //-------------------------------------------------------------------------------------------------------
 
 /* app.get('/', function (req, res) {

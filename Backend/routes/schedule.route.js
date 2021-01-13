@@ -6,6 +6,9 @@ function route(app){
         console.log('esty')
         ScheduleController.enterNewSchedule(req,res)
     })
+    app.get("api/schedule",(req,res)=>{
+        ScheduleController.GetAllSubjectsFromSchedule(req,res)
+    })
 }
 module.exports={
     route
