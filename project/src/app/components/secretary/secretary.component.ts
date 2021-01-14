@@ -18,7 +18,7 @@ export class SecretaryComponent implements OnInit {
     this.router.navigate(['../moreComponents/enter-new-user'])
   }
   PlaceStudents(){
-    this.router.navigate(['../moreComponents/PlaceStudents'])
+    this.router.navigate(['../moreComponents/places'])
   }
   enterSpecialization(){
     this.router.navigate(['../moreComponents/enter-specialization'])
@@ -28,5 +28,8 @@ export class SecretaryComponent implements OnInit {
   }
   updateSchedule(){
     this.router.navigate(['../moreComponents/update-schedule'])
+  }
+  NewFile(){
+    this.router.navigate(['../moreComponents/enter-files'])
   }
 }
