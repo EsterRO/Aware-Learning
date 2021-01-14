@@ -1,0 +1,29 @@
+<!-- <p>login works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;font-size: larger;">Login</h1>
+    <br>
+    <div >
+        <form  style="width: 200px;display: block;margin-left: 555px;"[formGroup]="formLogin"(submit)="enter()">
+            <fieldset>
+                <input class="form-control" type="text" maxlength="9" placeholder="הזן מספר זהות" formControlName="Id">
+                <div class="error" *ngIf="formLogin.controls['Id'].errors?.required!=null">שדה זה נדרש</div>
+            </fieldset><br>
+
+            
+                <input type="submit" class="button">
+           
+        </form>
+    </div>
+</body>
+
+</html>

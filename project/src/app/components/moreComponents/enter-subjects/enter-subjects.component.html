@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;font-size: larger;">הכנסת מקצוע חדש</h1>
+    <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newSubject" (submit)="send()">
+        <fieldset>
+            <input type="number" maxlength="3"placeholder="הכנס מספר התמחות" class="form-control" formControlName="SpecializationNum">
+            <div class="error" *ngIf="newSubject.controls['SpecializationNum'].errors?.required!=null">שדה זה נדרש</div>
+        </fieldset>
+        <fieldset>
+            <input type="text" maxlength="30"placeholder="הכנס שם מקצוע" class="form-control" formControlName="SubjectName">
+            <div class="error" *ngIf="newSubject.controls['SubjectName'].errors?.required!=null">שדה זה נדרש</div>
+        </fieldset>
+        <fieldset>
+            <input type="text" maxlength="9"placeholder="הכנס מ.ז. מורה מלמדת" class="form-control" formControlName="UserId">
+            <div class="error" *ngIf="newSubject.controls['UserId'].errors?.required!=null">שדה זה נדרש</div>
+        </fieldset>
+        <input type="submit" class="button">
+    </form>
+</body>
+</html>
