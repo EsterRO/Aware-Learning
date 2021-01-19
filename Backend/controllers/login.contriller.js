@@ -55,7 +55,7 @@ function Login(request, response) {
             }
             else
                 response.send(false)
-        } (err) => console.log('err from Login: ' + (data)).catch((err) => console.log('err from catch: ' + err))
+        } (err) => console.log('err from Login: ' + err).catch((err) => console.log('err from catch: ' + err))
     })
 }
 function SelectRoleById(request, response) {
@@ -63,13 +63,13 @@ function SelectRoleById(request, response) {
     dal.executeAsync(query, request.body, response).then((data) => {
         console.log('data from Login.SelectRoleById: ' + JSON.stringify(data))
         response.send(data)
-    }, (err) => console.log('err from Login.SelectRoleById: ' + (data)).catch((err) => console.log('err from catch: ' + err)))
+    }, (err) => console.log('err from Login.SelectRoleById: ' + err)).catch((err) => console.log('err from catch: ' + err))
 }
 
 function UpdateEnterTimeUser(request, response) {
     const query = `INSERT INTO ${tableNameT} VALUES ('${request.userId}',${request.FromTime})`
     dal.executeAsync(query, request.body, response).then((data) => {
-        console.log('was updated enter time: ' + JSON.stringify(data))
+        console.log('was updated enter time: ' + data)
         response.send('was updated enter time')
     }, (err) => console.log('err from Login.UpdateEnterTimeUser: ' + (data)).catch((err) => console.log('err from cath: ' + err)))
     function UpdateEnterTimeUser(request, response) {
@@ -77,7 +77,7 @@ function UpdateEnterTimeUser(request, response) {
         dal.executeAsync(query, request.body, response).then((data) => {
             console.log('was updated enter time: ' + JSON.stringify(data))
             response.send('was updated enter time')
-        }, (err) => console.log('err from Login.UpdateEnterTimeUser: ' + (data)).catch((err) => console.log('err from cath: ' + err)))
+        }, (err) => console.log('err from Login.UpdateEnterTimeUser: ' +err)).catch((err) => console.log('err from cath: ' + err))
     }
 }
 
