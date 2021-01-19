@@ -9,6 +9,7 @@ import { Time } from '@angular/common';
 import { Subjects } from '../models/Subject';
 import { Schedule } from '../models/Schedule';
 import { Files } from '../models/Files';
+import { Specializations } from '../models/Specializations';
 
 
 @Injectable({
@@ -50,8 +51,9 @@ export class UsersService {
       }
       return this.http.get<Array<Object>>(`${this.url}/api/user`,{params:data})
     } */
-  enterSpecialization(SpecName: string): Observable<boolean> {
-    return this.http.post<boolean>(`${this.url}/api/specialization`, SpecName, this.options)
+  enterSpecialization(Spec: Specializations): Observable<boolean> {
+    console.log('eeeeeeeeeeeeeeeee')
+    return this.http.post<boolean>(`${this.url}/api/specialization`, Spec, this.options)
   }
   enterSubject(newSub: Subjects): Observable<boolean> {
     return this.http.post<boolean>(`${this.url}/api/subject`, newSub, this.options)
@@ -62,5 +64,11 @@ export class UsersService {
   }
   AddNewFile(newFile:Files):Observable<boolean>{
     return this.http.post<boolean>(`${this.url}/api/file`,newFile,this.options)
+  }
+  /* GetSubjectsSchedule():Observable<Files[]>{
+    return this.http.get<Files[]>(`${this.url}/api/file`)
+  } */
+  GetAllSubjectsFromSchedule():Observable<Files[]>{
+    return this.http.get<Files[]>(`${this.url}/api/schedule`)
   }
 }

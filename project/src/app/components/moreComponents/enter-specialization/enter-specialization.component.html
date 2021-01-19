@@ -9,9 +9,19 @@
     <h1 style="text-align: center;font-size: larger;">Enter New Specialization</h1>
     <form style="width: 200px;display: block;margin-left: 555px;" [formGroup]="newSpecialization" (submit)="send()">
         <fieldset>
+            
+            <input type="number" maxlength="3"placeholder="הכנס מספר התמחות" class="form-control" formControlName="specializationNum">
+            <div class="error" *ngIf="newSpecialization.controls['specializationNum'].errors?.required!=null">שדה זה נדרש</div>
+        </fieldset>
+        <br>
+        <br>
+        <fieldset>
             <input type="text" maxlength="30"placeholder="הכנס שם התמחות" class="form-control" formControlName="specializationName">
             <div class="error" *ngIf="newSpecialization.controls['specializationName'].errors?.required!=null">שדה זה נדרש</div>
         </fieldset>
+        <br>
+        <br>
+        
         <input type="submit" class="button">
     </form>
 </body>

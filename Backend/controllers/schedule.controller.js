@@ -4,13 +4,27 @@ const dal = require("../dal/dal")
 tableName = "Schedule"
 
 function enterNewSchedule(request, response) {
-    const query = `INSERT INTO ${tableName} VALUES(${request.ScheduleDate},${request.SpecializationNum},${request.SubjectNum})`
-
+    console.log('enterSchedule')
+    console.log(request)
+    const query = `INSERT INTO ${tableName} VALUES(${request.body.ScheduleDate},${request.body.SpecializationNum},${request.body.SubjectNum})`
+    console.log(query)
     dal.executeAsync(query, request.body, response).then((data) => {
-        console.log("data from update-schedule: " + JSON.stringify(data))
+        console.log("data from update-schedule: " + data)
         response.send(true)
-    }, (err) => console.log('err from update-schedule: ' + (data)).catch((err) => console.log('err from catch: ' + err)))
+    }, (err) => console.log('err from update-schedule: ' + err)).catch((err) => console.log('err from catch: ' + err))
 }
-module.exports={
-    enterNewSchedule
+function GetAllSubjectsFromSchedule(request, response) {
+    const query = `select f.*
+    from ${tableName}  sc join [dbo].[Subjects] su 
+    on sc.SubjectNum=su.SubjectNum join [dbo].[Files]f on
+	f.SubjectNum=su.SubjectNum
+    where sc.ScheduleDate=GETDATE()  `
+    dal.executeAsync(query, request.body, response).then(data => {
+        console.log("data from GetAllSubjectsFromSchedule: " + data)
+        response.send(data)
+    }, (err) => console.log('err from GetAllSubjectsFromSchedule: ' + err)).catch((err) => console.log('err from catch: ' + err))
+}
+module.exports = {
+    enterNewSchedule,
+    GetAllSubjectsFromSchedule
 }

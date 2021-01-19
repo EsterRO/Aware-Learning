@@ -25,8 +25,9 @@ function executeAsync(query, values, res) {
                     //commonService.MySqlError(err, res)
                 }
                 else {
-                    resolve(result);
                     console.log('rrrr')
+                    resolve(result);
+                    
                 }
             })
         })

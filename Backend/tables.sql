@@ -12,18 +12,18 @@ Rol_ int not null constraint fK_Users_Roles foreign key(Rol_)references Roles,
 )
 
 create table Roles(
-RoleNum int not null identity primary key,
+RoleNum int not null  primary key,
 RoleName nvarchar(30)
 )
 create table  Specializations(
-SpecializationNum int not null identity primary key,
+SpecializationNum int not null  primary key,
 SpecializationName nvarchar(30)
 )
 
 
 --���� �� �� userid   ����� ����� ����� �� �"� ���� ���?
 create table Subjects(
-SubjectNum int not null identity primary key,
+SubjectNum int not null  primary key,
 SpecializationNum int not null constraint fK_subject_Specializations foreign key(SpecializationNum)references Specializations,
 SubjectName nvarchar(30),
 UserId nvarchar(9) not null constraint fK_Subject_users foreign key(UserId)references Users,

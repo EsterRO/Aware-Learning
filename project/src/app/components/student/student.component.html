@@ -12,55 +12,19 @@
   <h2 style="margin-right: 100px;">שיעורים שנותרו ללמוד</h2>
   <h2 style="margin-right:  540px;">מערכת היום</h2>
   <!-- <video width="320" height="240" controls>
-    <!-- <source src="מוטי שטינמץ דרשו.mp4" type="video/mp4"> -->
+    source src="מוטי שטינמץ דרשו.mp4" type="video/mp4"> -->
 
   <!-- </video> -->
   <!-- <div class="video"></div> -->
-  <!-- <table>
-    <!-- אמור להיות כאן *ngFor על השיעורים של מערכת היום -->
-<!--     <tr>
-      <th>שם השיעור</th>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-  <!--   </tr> -->
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-  <!-- </table> -->
-  <table></table>
-    <!-- אמור להיות כאן *ngFor על השיעורים של מערכת היום -->
-    <tr>
-      <th>שם השיעור</th>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-    </tr>
-    <tr>
-      <!--   אמור להיות ב-href את הכתובת של הדף של השיעור עם החומר -->
-      <td><a href="ggggggg">angular</a></td>
-     
-    </tr>
-  <!-- </table>  -->
+
+
+
+  <ol>
+    <li *ngFor="let fsub of this.SubjectS"><input type="button" value=fsub.SubjectNum (click)="enterToLesson(fsub)"></li>
+  </ol>
+
+
+
   <!-- <video controls #videoPlayer>
       <source src="https://files.dirshu.co.il/images/EirueyDirshu/Siyum_Hashas_13/Sicum.mp4" type="video/mp4"
         style="position: relative;width: 100px;height: 100px;" />

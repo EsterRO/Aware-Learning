@@ -13,19 +13,21 @@ date;
 numSpe;
 numSub;
   constructor(private router: Router, private Userservise: UsersService) { }
-
+   
   ngOnInit(): void {
-  }
-  send() {
-    let date: Date
+   date: Date
     let numSpe: number
     let numSub: number
+  }
+  send() {
+  
     let newSchedule = new Schedule()
-    newSchedule.ScheduleDate = date;
-    newSchedule.SpecializationNum = numSpe;
-    newSchedule.SubjectNum = numSub;
+    newSchedule.ScheduleDate = this.date;
+    newSchedule.SpecializationNum = this. numSpe;
+    newSchedule.SubjectNum =this. numSub;
+    console.log(newSchedule)
     this.Userservise.CreateNewSchedule(newSchedule).subscribe((data) => {
-      console.log("enter new schedule: " + date)
+      console.log("enter new schedule: " + Date)
     })
   }
 }

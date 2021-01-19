@@ -10,7 +10,7 @@ function TrackingStudents(request,response){
     dal.executeAsync(query,request,response).then((data)=>{
         console.log("data from TrackingStudents: "+JSON.stringify(data))
         response.send(data)
-    },(err) => console.log('err from TrackingStudents: ' + (data)).catch((err) => console.log('err from catch: ' + err)))
+    },(err) => console.log('err from TrackingStudents: ' + err)).catch((err) => console.log('err from catch: ' + err))
    
 }
 module.exports={
