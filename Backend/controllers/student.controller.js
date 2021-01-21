@@ -9,7 +9,7 @@ function TrackingStudents(request,response){
     where u.Rol_=2`
     dal.executeAsync(query,request,response).then((data)=>{
         console.log("data from TrackingStudents: "+JSON.stringify(data))
-        response.send(data)
+        response.send(response)
     },(err) => console.log('err from TrackingStudents: ' + err)).catch((err) => console.log('err from catch: ' + err))
    
 }

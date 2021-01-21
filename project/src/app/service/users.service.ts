@@ -68,7 +68,14 @@ export class UsersService {
   /* GetSubjectsSchedule():Observable<Files[]>{
     return this.http.get<Files[]>(`${this.url}/api/file`)
   } */
-  GetAllSubjectsFromSchedule():Observable<Files[]>{
-    return this.http.get<Files[]>(`${this.url}/api/schedule`)
+  GetAllSubjectsFromSchedule():Observable<string[]>{
+    return this.http.get<string[]>(`${this.url}/api/getAllSubjectsFromSchedule`)
+  }
+  ReaturnNumS(subName:string):Observable<number>{
+    return this.http.get<number>(`${this.url}/api/returnNumS/${subName}`)
+  }
+  GetAllFiles(subNum:number):Observable<Files[]>{
+    let data={'subNum':subNum};
+    return this.http.get<Files[]>(`${this.url}/api/getAllFiles/${subNum}`)
   }
 }

@@ -1,11 +1,14 @@
-const SubjectController=require('../controllers/subject.controller.js')
+const SubjectController = require('../controllers/subject.controller.js')
 
 
-function route(app){
-app.post("/api/subject",(req,res)=>{
-    SubjectController.enterNewSubject(req,res)
-})
+function route(app) {
+    app.post("/api/subject", (req, res) => {
+        SubjectController.enterNewSubject(req, res)
+    })
+    app.get("/api/returnNumS/:subName", (req, res) => {
+        SubjectController.ReaturnNumS(req, res)
+    })
 }
-module.exports={
+module.exports = {
     route
 }

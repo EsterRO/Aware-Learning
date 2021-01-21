@@ -17,6 +17,7 @@ import { EnterSpecializationComponent } from './components/moreComponents/enter-
 import { EnterSubjectsComponent } from './components/moreComponents/enter-subjects/enter-subjects.component';
 import { UpdateScheduleComponent } from './components/moreComponents/update-schedule/update-schedule.component';
 import { EnterFilesComponent } from './components/moreComponents/enter-files/enter-files.component';
+import { ViewLessonComponent } from './components/moreComponents/view-lesson/view-lesson.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EnterFilesComponent } from './components/moreComponents/enter-files/ent
     EnterSpecializationComponent,
     EnterSubjectsComponent,
     UpdateScheduleComponent,
-    EnterFilesComponent
+    EnterFilesComponent,
+    ViewLessonComponent
   ],
   imports: [
     BrowserModule,
