@@ -6,9 +6,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "msnodesqlv8": "^2.0.6",
     "mssql": "^6.2.3",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "passport": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {

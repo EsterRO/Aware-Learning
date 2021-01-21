@@ -8,7 +8,7 @@ function TrackingStudents(request,response){
     from ${tableName} u join Times t on u.Id=t.UserId
     where u.Rol_=2`
     dal.executeAsync(query,request,response).then((data)=>{
-        console.log("data from TrackingStudents: "+JSON.stringify(data))
+        console.log("data from TrackingStudents: "+response)
         response.send(response)
     },(err) => console.log('err from TrackingStudents: ' + err)).catch((err) => console.log('err from catch: ' + err))
    

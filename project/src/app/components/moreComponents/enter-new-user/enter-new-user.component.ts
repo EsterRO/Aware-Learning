@@ -44,10 +44,10 @@ export class EnterNewUserComponent implements OnInit {
       newUser.address = this.newUserForm.controls['AdressUser'].value
       newUser.Specialization = this.newUserForm.controls['SpecializationUser'].value
       newUser.Role = this.newUserForm.controls['RoleUser'].value
-      this.Userservise.CreateNewUser(newUser).subscribe((data) => {
-        console.log('the user enter ')
-        alert('enter user: '+JSON.stringify(data))
-      })
+      // this.Userservise.CreateNewUser(newUser).subscribe((data) => {
+      //   console.log('the user enter ')
+      //   alert('enter user: '+JSON.stringify(data))
+      // })
     }
   }
 }

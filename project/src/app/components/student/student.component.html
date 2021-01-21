@@ -12,6 +12,7 @@
   <h2 style="margin-right: 100px;">שיעורים שנותרו ללמוד</h2>
   <h2 style="margin-right:  540px;">מערכת היום</h2>
   <!-- <video width="320" height="240" controls>
+
     source src="מוטי שטינמץ דרשו.mp4" type="video/mp4"> -->
 
   <!-- </video> -->
@@ -20,12 +21,22 @@
 
 
   <ol>
-    <li *ngFor="let fsub of this.SubjectS"><input type="button" value=fsub.SubjectNum (click)="enterToLesson(fsub)"></li>
-  </ol>
+    <li *ngFor="let fsub of SubjectS"><input type="button" VALUE= {{fsub}} (click)="enterToLesson(fsub)"></li>
+  </ol >
+
+  <!-- <input *ngFor="let fsub of SubjectS" type="button" value=`${{fsub}}`  (click)="enterToLesson(fsub)"> -->
 
 
 
-  <!-- <video controls #videoPlayer>
+
+  <!-- </video> -->
+  <!-- <div class="video"></div> -->
+  <!-- <table>
+    <! אמור להיות כאן *ngFor על השיעורים של מערכת היום -->
+<!--     <tr>
+      <th>שם השיעור</th>
+    
+   <video controls #videoPlayer>
       <source src="https://files.dirshu.co.il/images/EirueyDirshu/Siyum_Hashas_13/Sicum.mp4" type="video/mp4"
         style="position: relative;width: 100px;height: 100px;" />
     </video> -->

@@ -11,7 +11,7 @@ import { Schedule } from '../models/Schedule';
 import { Files } from '../models/Files';
 import { Specializations } from '../models/Specializations';
 
-
+import { readFile, readdir } from 'fs';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,21 +25,23 @@ export class UsersService {
   constructor(private http: HttpClient) {
     this.login = ''
   }
-  Login(Id: string): Observable<boolean> {
+  Login(Id: string): Observable<string> {
     let data = { 'Id': Id }
-    return this.http.get<boolean>(`${this.url}/api/login`, { params: data })
+    return this.http.get<string>(`${this.url}/api/login`, { params: data })
   }
-  SelectRoleById(Id: string): Observable<number> {
-    let data = { 'Id': Id }
-    return this.http.get<number>(`${this.url}/api/login`, { params: data })
-  }
-  CreateNewUser(user: User): Observable<boolean> {
-    console.log('new user')
-    return this.http.post<boolean>(`${this.url}/api/user`, user, this.options)
-  }
-  UpdateEnterTimeUser(newTimeE: Times): Observable<Date> {
-    return this.http.post<Date>(`${this.url}/api/login`, newTimeE, this.options)
-  }
+
+  // SelectRoleById(Id: string): Observable<number> {
+  //   let data = { 'Id': Id }
+  //   return this.http.get<number>(`${this.url}/api/login`, { params: data })
+  // }
+
+  // CreateNewUser(user: User): Observable<boolean> {
+  //   console.log('new user')
+  //   return this.http.post<boolean>(`${this.url}/api/user`, user, this.options)
+  // }
+  // UpdateEnterTimeUser(newTimeE: Times): Observable<Date> {
+  //   return this.http.post<Date>(`${this.url}/api/login`, newTimeE, this.options)
+  // }
   TrackingStudents(): Observable<User[]> {
     return this.http.get<User[]>(`${this.url}/api/Student`)
   }
@@ -65,6 +67,7 @@ export class UsersService {
   AddNewFile(newFile:Files):Observable<boolean>{
     return this.http.post<boolean>(`${this.url}/api/file`,newFile,this.options)
   }
+
   /* GetSubjectsSchedule():Observable<Files[]>{
     return this.http.get<Files[]>(`${this.url}/api/file`)
   } */
@@ -77,5 +80,7 @@ export class UsersService {
   GetAllFiles(subNum:number):Observable<Files[]>{
     let data={'subNum':subNum};
     return this.http.get<Files[]>(`${this.url}/api/getAllFiles/${subNum}`)
+
+ 
   }
 }

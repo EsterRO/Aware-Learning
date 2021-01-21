@@ -26,7 +26,7 @@ import { ViewLessonComponent } from './components/moreComponents/view-lesson/vie
   LoginComponent,
     ManagerComponent,
     SecretaryComponent,
-    StudentComponent,
+    //StudentComponent,
     TeacherComponent,
     EnterNewUserComponent,
     PlacesComponent,

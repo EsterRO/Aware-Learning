@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Files } from 'src/app/models/Files';
 import { UsersService } from 'src/app/service/users.service';
-
+import { readFile, readdir } from 'fs';
 @Component({
   selector: 'app-view-lesson',
   templateUrl: './view-lesson.component.html',
@@ -11,8 +11,8 @@ import { UsersService } from 'src/app/service/users.service';
 export class ViewLessonComponent implements OnInit {
   @Input() fsub;
   numSub: number;
-  Files: Array< Files>
-
+  //Files: Array< Files>
+  Files:Files[]=[]
   constructor(private router: Router, private Userservise: UsersService) { }
 
   ngOnInit(): void {

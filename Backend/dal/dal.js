@@ -13,6 +13,7 @@ var config = {
         "tedious": true
     }
 };
+
 /* values, */
 function executeAsync(query, values, res) {
 
@@ -28,6 +29,7 @@ function executeAsync(query, values, res) {
                     console.log('rrrr')
                     resolve(result);
                     
+
                 }
             })
         })

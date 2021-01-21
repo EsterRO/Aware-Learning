@@ -33,34 +33,46 @@ export class LoginComponent implements OnInit {
 
     // this.router.navigate(['/teacher, {Id}']);
     this.Userservise.Login(this.formLogin.controls['Id'].value).subscribe((data) => {
-      console.log(data)
-      if (data) {
-        let newTime=new Times()
-        newTime.userId=this.formLogin.controls['Id'].value
-        newTime.fromTime=new Date()
-        this.Userservise.UpdateEnterTimeUser(newTime).subscribe((data)=>{
-          console.log(data)
-        })
-        this.Userservise.login = this.formLogin.controls.Id.value
-        console.log('login: ' + this.Userservise.login)
-        this.Userservise.SelectRoleById(this.formLogin.controls['Id'].value).subscribe((numRole)=>{
-          console.log(numRole)
-          if(numRole==1)
-          this.router.navigate(['/teacher'])
-          if(numRole==2)
-          this.router.navigate(['/student'])
-          if(numRole==3)
-          this.router.navigate(['/manager'])
-          if(numRole==4)
-          this.router.navigate(['/secretary'])
-        })
+      if (data=='1') {
+        this.router.navigate(['/teacher'])
       }
-      else {
-        alert('מספר זהות שגוי')
+      if (data=='2') {
+        this.router.navigate(['/student'])
       }
+      if (data=='3') {
+        this.router.navigate(['/manager'])
+      }
+      if (data=='4') {
+        this.router.navigate(['/secretary'])
+      }
+        // let newTime=new Times()
+        // newTime.userId=this.formLogin.controls['Id'].value
+        // newTime.fromTime=new Date()
+        
+        // this.Userservise.UpdateEnterTimeUser(newTime).subscribe((data)=>{
+        //   console.log(data)
+        // })
+        // this.Userservise.login = this.formLogin.controls.Id.value
+        // console.log('login: ' + this.Userservise.login)
+      //   this.Userservise.SelectRoleById(this.formLogin.controls['Id'].value).subscribe((numRole)=>{
+      //     console.log(numRole)
+      //     if(numRole==1)
+      //     this.router.navigate(['/teacher'])
+      //     if(numRole==2)
+      //     this.router.navigate(['/student'])
+      //     if(numRole==3)
+      //     this.router.navigate(['/manager'])
+      //     if(numRole==4)
+      //     this.router.navigate(['/secretary'])
+      //   })
+      // }
+      // else {
+      //   alert('מספר זהות שגוי')
+       }
       // alert("fhgf");
 
-    })
+    // }
+    )
     /* if (this.formLogin.valid) {
       let user = new User()
       user.Firstname = this.formLogin.controls['FUserName'].value;

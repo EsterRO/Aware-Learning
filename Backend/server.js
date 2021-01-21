@@ -11,6 +11,8 @@ const schedule_route=require('./routes/schedule.route')
 const spec_rout=require('./routes/specialization.route')
 const subject_route=require('./routes/subject.route')
 const { readFile, readdir } = require('fs')
+const specialization_route=require('./routes/specialization.route')
+
 
 app.use(cors())
 app.use(bd.json())
@@ -24,6 +26,8 @@ file_route.route(app)
 schedule_route.route(app)
 spec_rout.route(app)
 subject_route.route(app)
+
+specialization_route.route(app)
 
 //-------------------------------------------------------------------------------------------------------
 
